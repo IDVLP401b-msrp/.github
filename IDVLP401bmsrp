@@ -1,0 +1,85 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Login</title>
+    <style>
+body {
+        background-color: #000;
+        color: #FFD700;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+.container {
+        text-align: center;
+        border: 2px solid #FFD700;
+        padding: 20px;
+        border-radius: 10px;
+        }
+button {
+        background-color: #FFD700;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        }
+button:hover {
+        background-color: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Connect to MetaMask</h1>
+        <button id="connectButton">Connect Wallet</button>
+        <p id="status"></p>
+    </div>
+    <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <h2 class="text-white">The Multiverse Life Golf</h2>
+                            <h1 class="cd-headline rotate-1 text-#005224 mb-4 pb-2">
+                                <span>The MvPGA is</span>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">Interactive</b>
+                                    <b>Digital</b>
+                                    <b>Reality</b>
+                                </span>
+                            </h1>
+                            <div class="custom-btn-group">
+                                <a href="#section_2" class="btn custom-btn smoothscroll me-3">Our Legacy</a>
+                                <a href="#section_3" class="link smoothscroll">MvMembership 2025</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="ratio ratio-16x9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/MGNgbNGOzh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+
+    <script>
+document.getElementById('connectButton').addEventListener('click', async () => {
+        if (typeof window.ethereum !== 'undefined') {
+            try {
+                const accounts = await window.ethereum.request({
+                    method: 'eth_requestAccounts'
+                });
+                document.getElementById('status').innerText = 'Connected account: ' + accounts[0];
+            } catch (error) {
+                document.getElementById('status').innerText = 'Error connecting to MetaMask: ' + error.message;
+            }
+        } else {
+            document.getElementById('status').innerText = 'MetaMask is not installed. Please install it to use this dApp.';
+        }
+        });
+    </script>
+</body>
+</html>
+
+$IDVLP | $FCNN | $FOXX 
